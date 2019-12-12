@@ -83,7 +83,17 @@ class Download_ui(qw.QWidget):
 
     def finish(self, str):
         self.speed_label.setText(str)
-        # qw.QMessageBox.information(self, 'tips', str, qw.QMessageBox.Yes)
+
+
+class Application:
+    def __init__(self):
+        self.app = qw.QApplication(sys.argv)
+        self.win = Download_ui()
+
+    def run(self):
+        self.win.show()
+
+        exit(self.app.exec_())
 
 
 if __name__ == "__main__":
